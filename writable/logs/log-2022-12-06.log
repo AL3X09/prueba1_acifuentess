@@ -1,0 +1,50 @@
+CRITICAL - 2022-12-06 18:07:12 --> syntax error, unexpected ')', expecting ';'
+#0 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-06 18:22:39 --> syntax error, unexpected ')', expecting ';'
+#0 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-06 18:26:31 --> syntax error, unexpected ')', expecting ';'
+#0 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-06 18:27:35 --> syntax error, unexpected ')', expecting ';'
+#0 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-06 19:02:14 --> syntax error, unexpected '{'
+#0 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
