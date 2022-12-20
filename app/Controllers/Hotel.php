@@ -6,7 +6,7 @@ use Config\Services;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\RESTful\ResourceController;
 use Exception;
-use App\Models\AcomodacionModel;
+use App\Models\HotelModel;
 
 // headers
 header("Access-Control-Allow-Origin: *");
@@ -14,7 +14,7 @@ header("Content-Type: application/json; charset=utf8");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control");
 
 //grupo de la unidad de servicios de salud
-class Acomodacion extends ResourceController{
+class Hotel extends ResourceController{
     
     use ResponseTrait;
 
@@ -22,16 +22,16 @@ class Acomodacion extends ResourceController{
         
         try {
             
-            $acomodacionModel = new AcomodacionModel();
+            $thotelModel = new HotelModel();
             //printf("entra 2: ".$exis_gus);
             //vedrifico si llega información
-            $exis_acomodacion = $acomodacionModel->get_all();
-                if (!empty($exis_acomodacion)) {
+            $exis_hotel = $thotelModel->get_all();
+                if (!empty($exis_hotel)) {
 
                     $response = [
                         'status' => 200,
                         "error" => FALSE,
-                        'data' => $exis_acomodacion,
+                        'data' => $exis_hotel,
                     ];
 
                 } else {
@@ -53,15 +53,19 @@ class Acomodacion extends ResourceController{
     public function insertData(){
         
         try {
-            $acomodacionModel = new AcomodacionModel();
+            $thotelModel = new HotelModel();
              //vedrifico si llega información obligatoria
              if (!empty($_POST['nombre']) ) {
 
                 $data = [
                     "nombre" => $this->request->getVar("nombre"),
+                    "ciudad" => $this->request->getVar("ciudad"),
+                    "numero_hab" => $this->request->getVar("numero_hab"),
+                    "direccion" => $this->request->getVar("direccion"),
+                    "nit" => $this->request->getVar("nit")
                 ];
                //valido si ya esta registrado el correo y envio exeption
-               $exis_d = $acomodacionModel->exist_a($data);
+               $exis_d = $thabitacionModel->exist_t($data);
 
                if ($exis_d) {
                    $response = [
@@ -71,7 +75,7 @@ class Acomodacion extends ResourceController{
                    ];
                } else {
                    //Envio datos al modelo para insertar
-                   $insert_t = $acomodacionModel->insert_a($data);
+                   $insert_t = $thabitacionModel->insert_t($data);
 
                    if ($insert_t) {
                        $response = [

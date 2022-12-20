@@ -13,7 +13,7 @@
 			<div class="row mt-2">
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;">
-						<img src="..." class="card-img-top" alt="...">
+						<img src="<?=base_url();?>/public/assets/img/hotel.png" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">Hoteles</h5>
 							<p class="card-text">
@@ -25,7 +25,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;">
-						<img src="..." class="card-img-top" alt="...">
+						<img src="<?=base_url();?>/public/assets/img/habitacion.png" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">Tipo Habitación</h5>
 							<p class="card-text">
@@ -37,7 +37,7 @@
 				</div>
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;">
-						<img src="..." class="card-img-top" alt="...">
+						<img src="<?=base_url();?>/public/assets/img/acomodacion.png" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title">ACOMODACIÓN</h5>
 							<p class="card-text">
@@ -53,9 +53,9 @@
 				
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;">
-						<img src="..." class="card-img-top" alt="...">
+						<img src="<?=base_url();?>/public/assets/img/habitacomo.png" class="card-img-top" alt="...">
 						<div class="card-body">
-							<h5 class="card-title">Asociar Habitacion Acomodación</h5>
+							<h5 class="card-title">Asociar Habitacion y Acomodación</h5>
 							<p class="card-text">
 								Listar e ingresar Asociación
 							</p>

@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AcomodacionModel extends Model{
+class HotelHabitacionModel extends Model{
 	
 	function __construct()
     {
@@ -11,7 +11,7 @@ class AcomodacionModel extends Model{
     }
 
     protected $DBGroup              = 'default';
-	protected $table                = 'acomodacion';
+	protected $table                = 'hotel_habitacion';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
@@ -20,7 +20,9 @@ class AcomodacionModel extends Model{
 	protected $protectFields        = true;
 	protected $allowedFields        = [
 		"id",
-		"nombre"
+		"fk_hotel",
+		"fk_tipo_habitacion",
+		"cantidad_h"
 	];
 
     // Dates
@@ -47,8 +49,6 @@ class AcomodacionModel extends Model{
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
 
-	
-
 	public function get_all()
 	{
 		$querye = $this->table($this->table)
@@ -58,7 +58,7 @@ class AcomodacionModel extends Model{
 	}
 
 	//funciones
-	public function exist_a($data)
+	public function exist_hh($data)
 	{
 		$querye = $this->table($this->table)
 			->where('nombre', $data->nombre)
@@ -72,7 +72,17 @@ class AcomodacionModel extends Model{
 		return $querye;
 	}
 
-	public function insert_a($data)
+	public function get_thabitaciones($fk_hotel)
+    {
+        $querye = $this->table($this->table)
+				  ->distinct();
+				  ->select('thabitaciones')
+				  ->join('hotel', 'hotel.id = '.$this->table->fk_hotel, 'left')
+				  ->where($this->table->fk_hotel, $fk_hotel)
+        return $querye;
+    }
+
+	public function insert_hh($data)
 	{
 		$query = $this->db->table($this->table)->insert($data);
 		return $query ? true : false;

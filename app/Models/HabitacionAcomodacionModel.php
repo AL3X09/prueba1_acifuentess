@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AcomodacionModel extends Model{
+class HabitacionAcomodacionModel extends Model{
 	
 	function __construct()
     {
@@ -11,7 +11,7 @@ class AcomodacionModel extends Model{
     }
 
     protected $DBGroup              = 'default';
-	protected $table                = 'acomodacion';
+	protected $table                = 'habitacionacomodacion';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;

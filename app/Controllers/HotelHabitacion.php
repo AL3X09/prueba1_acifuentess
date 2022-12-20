@@ -6,7 +6,8 @@ use Config\Services;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\RESTful\ResourceController;
 use Exception;
-use App\Models\AcomodacionModel;
+use App\Models\HotelHabitacionModel;
+use App\Models\HotelModel;
 
 // headers
 header("Access-Control-Allow-Origin: *");
@@ -14,7 +15,7 @@ header("Content-Type: application/json; charset=utf8");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control");
 
 //grupo de la unidad de servicios de salud
-class Acomodacion extends ResourceController{
+class HotelHabitacion extends ResourceController{
     
     use ResponseTrait;
 
@@ -22,16 +23,16 @@ class Acomodacion extends ResourceController{
         
         try {
             
-            $acomodacionModel = new AcomodacionModel();
-            //printf("entra 2: ".$exis_gus);
+            $thotelhabitacion = new HotelHabitacionModel();
+            if (!empty($_POST['fk_hotel']) && !empty($_POST['fk_tipohabitacion']) && !empty($_POST['cantidad']) ) {
             //vedrifico si llega información
-            $exis_acomodacion = $acomodacionModel->get_all();
-                if (!empty($exis_acomodacion)) {
+            $exis_data = $thotelhabitacion->get_all();
+                if (!empty($exis_data)) {
 
                     $response = [
                         'status' => 200,
                         "error" => FALSE,
-                        'data' => $exis_acomodacion,
+                        'data' => $exis_data,
                     ];
 
                 } else {
@@ -53,15 +54,33 @@ class Acomodacion extends ResourceController{
     public function insertData(){
         
         try {
-            $acomodacionModel = new AcomodacionModel();
+            $thotelhabitaModel = new HotelModel();
              //vedrifico si llega información obligatoria
-             if (!empty($_POST['nombre']) ) {
+             if (!empty($_POST['fk_hotel']) && !empty($_POST['fk_tipohabitacion']) && !empty($_POST['cantidad']) ) {
+                //consulto la cantidad total que puede tener el hotel
+                $thotelModel = new HotelModel();
+                $total_h = $thotelModel->get_thabitaciones();
+                //obtengo la cantidad de habitaciones asociadas
+                $count_data = $thotelhabitacion->count_all();
+                if (!empty($count_data) &&  $count_data < $thotelModel ) {
+                    $total=($count_data+$_POST['cantidad']);
+                    //valido que no supero el numero de habitaciones
+                    if($total > $thotelModel){
+                        $response = [
+                            'status' => 401,
+                            "error" => TRUE,
+                            'messages' => 'Excede el valor de las habitaciones para el hotel',
+                        ];
+                    }
+                }
 
                 $data = [
-                    "nombre" => $this->request->getVar("nombre"),
+                    "fk_hotel" => $this->request->getVar("nombre"),
+                    "fk_tipohabitacion" => $this->request->getVar("ciudad"),
+                    "cantidad" => $this->request->getVar("numero_hab"),
                 ];
                //valido si ya esta registrado el correo y envio exeption
-               $exis_d = $acomodacionModel->exist_a($data);
+               $exis_d = $thabitacionModel->exist_t($data);
 
                if ($exis_d) {
                    $response = [
@@ -71,7 +90,7 @@ class Acomodacion extends ResourceController{
                    ];
                } else {
                    //Envio datos al modelo para insertar
-                   $insert_t = $acomodacionModel->insert_a($data);
+                   $insert_t = $thabitacionModel->insert_t($data);
 
                    if ($insert_t) {
                        $response = [

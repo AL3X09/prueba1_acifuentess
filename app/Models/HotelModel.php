@@ -23,7 +23,8 @@ class UserModel extends Model{
 		"apellidos", 
 		"correo", 
 		"telefono",
-		"contrasenia"
+		"contrasenia",
+		"thabitaciones"
 	];
 
     // Dates
@@ -63,6 +64,15 @@ class UserModel extends Model{
         } else {
             $querye = false;
         }
+        return $querye;
+    }
+
+	public function get_thabitaciones($fk_hotel)
+    {
+        $querye = $this->table($this->table)
+				  ->distinct();
+				  ->select('thabitaciones')
+				  ->where('id', $fk_hotel)
         return $querye;
     }
 
