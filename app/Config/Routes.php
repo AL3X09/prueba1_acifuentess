@@ -52,7 +52,7 @@ $routes->get("/Acomodacion", "Home::acomodacion_view");
 
  //grupo para procesos de las HSO
 $routes->group("api/hotel", function ($routes) {
-    $routes->get("Hotel", "getallData::Listar");
+    $routes->get("listar", "getallData::Listar");
     
 });
 

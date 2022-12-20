@@ -3,7 +3,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model{
+class HotelModel extends Model{
 	
 	function __construct()
     {
@@ -11,20 +11,20 @@ class UserModel extends Model{
     }
 
     protected $DBGroup              = 'default';
-	protected $table                = 'tbl_usuario';
-	protected $primaryKey           = 'id_tbl_usuario';
+	protected $table                = 'hotel';
+	protected $primaryKey           = 'id_h';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
 	protected $allowedFields        = [
-		"nombres", 
-		"apellidos", 
-		"correo", 
-		"telefono",
-		"contrasenia",
-		"thabitaciones"
+		'id_h',
+		"nombre_h", 
+		"ciudad", 
+		"direccion", 
+		"nit",
+		"num_habitaciones"
 	];
 
     // Dates
@@ -53,10 +53,10 @@ class UserModel extends Model{
 
 	
 
-	public function exist_email($email)
+	public function exist_name($name)
     {
         $querye = $this->table($this->table)
-					->where('correo', $email)
+					->where('nombre', $name)
 					->countAllResults();
 		
         if($querye >  0){
@@ -70,34 +70,10 @@ class UserModel extends Model{
 	public function get_thabitaciones($fk_hotel)
     {
         $querye = $this->table($this->table)
-				  ->distinct();
-				  ->select('thabitaciones')
-				  ->where('id', $fk_hotel)
+				  ->distinct()
+				  ->select('num_habitaciones')
+				  ->where('id', $fk_hotel);
         return $querye;
-    }
-
-	public function register($data)
-    {
-        $query = $this->db->table($this->table)->insert($data);
-        return $query ? true : false;
-    }
- 
-    public function data_user($email)
-    {
-        $query = $this->table($this->table)
-                ->where('correo', $email)
-                ->countAllResults(); //->countAll(); OJO ESTE CUENTA TODOS LOS REGISTRO PERO NO APLICA EL WHERE
- 
-        if($query >  0){
-            $hasil = $this->table($this->table)
-                    ->where('correo', $email)
-                    ->limit(1)
-                    ->get()
-                    ->getRowArray();
-        } else {
-            $hasil = array(); 
-        }
-        return $hasil;
     }
 
 }
