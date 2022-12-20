@@ -1,7 +1,6 @@
 <?php 
 namespace App\Controllers;
 
-
 use Config\Services;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\RESTful\ResourceController;
@@ -15,29 +14,11 @@ header("Content-Type: application/json; charset=utf8");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control");
 
 //grupo de la unidad de servicios de salud
-class Formcapinstalada extends ResourceController{
+class TipoHabitacion extends ResourceController{
     
     use ResponseTrait;
 
-    public function index(){
-
-        echo view('template/header');
-		echo view('template/main_header');
-		echo view('template/sidebar');
-		echo view('dash_capa_instalada_view');
-		echo view('template/footer');
-    }
-
-    public function formulario(){
-
-        echo view('template/header');
-		echo view('template/main_header');
-		echo view('template/sidebar');
-		echo view('formcapinstalada_view');
-		echo view('template/footer');
-    }
-
-    public function getallDatainstalada(){
+    public function getallData(){
         
         try {
             $capainstaModel = new CapacidadinstaladaModel();

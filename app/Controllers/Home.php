@@ -15,4 +15,10 @@ class Home extends BaseController{
 		echo view('template/footer');
     }
 
+    public function hoteles_view(){
+        echo view('template/header');
+		echo view('hotele/index');
+		echo view('template/footer');
+    }
+
 }

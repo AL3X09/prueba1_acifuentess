@@ -24,8 +24,8 @@ class App extends BaseConfig
      * @var string
      */
     //public $baseURL = 'http://localhost:8080/';
-    //public $baseURL = 'http://192.168.0.2/prueba_acifuentess/';
-    public $baseURL = 'http://localhost/prueba_acifuentess/';
+    public $baseURL = 'http://192.168.0.2/prueba1_acifuentess/';
+    //public $baseURL = 'http://localhost/prueba_acifuentess/';
 
     /**
      * --------------------------------------------------------------------------

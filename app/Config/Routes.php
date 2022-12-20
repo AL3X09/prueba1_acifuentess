@@ -32,11 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get("/", "Home::index");
-$routes->get("/Ejer1", "Ejercicio::ejercicio1");
-$routes->get("/Ejer2", "Ejercicio::ejercicio2");
-$routes->get("/Ejer3", "Ejercicio::ejercicio3");
-$routes->get("/Ejer4", "Ejercicio::ejercicio4");
-$routes->get("/Ejer5", "Ejercicio::ejercicio5");
+$routes->get("/Hoteles", "Home::hoteles_view");
 
 /*
  * --------------------------------------------------------------------
@@ -53,9 +49,9 @@ $routes->get("/Ejer5", "Ejercicio::ejercicio5");
  */
 
  //grupo para procesos de las HSO
-$routes->group("api/prueba", function ($routes) {
+$routes->group("api/hotel", function ($routes) {
 
-    $routes->post("e1", "Prueba::E1");
+    $routes->post("Hotel", "getallData::Listar");
     $routes->post("e3", "Prueba::E3");
     $routes->post("e4", "Prueba::E4");
     
