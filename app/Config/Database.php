@@ -32,14 +32,15 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => 'pgsql:host=192.168.0.2;port=5432;dbname=hotel_dev;user=postgres;password=root',
+        //'DSN'      => 'pgsql:host=192.168.0.2;port=5432;dbname=hotel_dev',
         'hostname' => '',
         'username' => 'postgres',
         'password' => 'root',
-        'database' => 'hoteles_dev',
-        'DBDriver' => '',
+        'database' => 'hotel_dev',
+        'DBDriver' => 'postgre',
         'DBPrefix' => '',
         'pConnect' => false,
-        'DBDebug'  => TRUE;//(ENVIRONMENT !== 'production'),
+        'DBDebug'  => (ENVIRONMENT !== 'production'),
         'charset'  => 'utf8',
         'DBCollat' => 'utf8_general_ci',
         'swapPre'  => '',

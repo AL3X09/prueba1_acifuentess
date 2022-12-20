@@ -1,0 +1,10 @@
+CRITICAL - 2022-12-19 21:42:00 --> syntax error, unexpected '*'
+#0 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}

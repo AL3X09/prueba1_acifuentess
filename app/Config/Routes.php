@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Login');
+$routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -33,6 +33,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get("/", "Home::index");
 $routes->get("/Hoteles", "Home::hoteles_view");
+$routes->get("/Tipohabitacion", "Home::tipohabitacion_view");
+$routes->get("/Acomodacion", "Home::acomodacion_view");
 
 /*
  * --------------------------------------------------------------------
@@ -50,13 +52,20 @@ $routes->get("/Hoteles", "Home::hoteles_view");
 
  //grupo para procesos de las HSO
 $routes->group("api/hotel", function ($routes) {
-
-    $routes->post("Hotel", "getallData::Listar");
-    $routes->post("e3", "Prueba::E3");
-    $routes->post("e4", "Prueba::E4");
+    $routes->get("Hotel", "getallData::Listar");
     
 });
 
+ //grupo para procesos de las XXX
+$routes->group("api/tipohabitacion", function ($routes) {
+    $routes->get("listar", "TipoHabitacion::getallData");
+    $routes->post("insertar", "TipoHabitacion::insertData");
+});
+
+ //grupo para procesos de las XXX
+ $routes->group("api/acomodacion", function ($routes) {
+    $routes->get("listar", "acomodacion::getallData");
+});
 
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
