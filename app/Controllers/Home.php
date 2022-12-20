@@ -17,7 +17,7 @@ class Home extends BaseController{
 
     public function hoteles_view(){
         echo view('template/header');
-		echo view('hotele/index');
+		echo view('hotel/index');
 		echo view('template/footer');
     }
 
