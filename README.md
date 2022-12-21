@@ -56,3 +56,4 @@ Please make sure to update tests as appropriate.
 Diagrame de Clases
 ![alt text](https://github.com/AL3X09/prueba1_acifuentess/tree/main/UML/uml_clases.PNG?raw=true)
 ![plot](./prueba1_acifuentess/tree/main/UML/uml_clases.PNG)
+<img src="https://github.com/AL3X09/prueba1_acifuentess/tree/main/UML/uml_clases.PNG?raw=true" width="128"/>
