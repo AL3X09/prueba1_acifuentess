@@ -8,7 +8,7 @@ limpio usando solo html
 
 ## Instalación
 
-1-Descargue el proyecto desde el repositorio
+1-Descargue el proyecto desde el repositorio <br />
 2-Aloje la carpeta descomprimida en su servidor local o empresarial
 3-debe alojarlo el paquete en su carpeta donde almacene sus sitios (exemplo: si tiene XAMMP la ruta es /xampp/htdocs)
 4-Antes de iniciar debe configurara en el framework la conexion a la base de datos a su servidor de pruebas
@@ -37,8 +37,8 @@ limpio usando solo html
         'port'     => 5432,
     ];
     ```
-    4-3 no configure su htacces, ni defina un host para desplegar la solución ya que deberia hacer mas cambios al fichero de configuración
-5-abra su navegador de preferencia y en la cinta de opciones coloque lo siguiente: http://localhost/prueba1_acifuentess
+    4-3 no configure su htacces, ni defina un host para desplegar la solución ya que deberia hacer mas cambios al fichero de configuración <br />
+5-abra su navegador de preferencia y en la cinta de opciones coloque lo siguiente: http://localhost/prueba1_acifuentess <br />
 
 ## Uso
 La solución integra sus p
@@ -53,5 +53,5 @@ Please make sure to update tests as appropriate.
 [MIT](https://choosealicense.com/licenses/mit/)
  
 # UML
-Diagrame de Clases
+Diagrame de Clases  <br />
 <img src="https://raw.githubusercontent.com/AL3X09/prueba1_acifuentess/main/UML/uml_clases.PNG" width="auto"/>
