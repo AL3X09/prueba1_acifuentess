@@ -9,11 +9,11 @@ limpio usando solo html
 ## Instalación
 
 1-Descargue el proyecto desde el repositorio <br />
-2-Aloje la carpeta descomprimida en su servidor local o empresarial
-3-debe alojarlo el paquete en su carpeta donde almacene sus sitios (exemplo: si tiene XAMMP la ruta es /xampp/htdocs)
-4-Antes de iniciar debe configurara en el framework la conexion a la base de datos a su servidor de pruebas
-    4.1- debe abrir la carpeta del proyecto e ir a la carpeta "/app", posteriormente a la carpeta "/config" y posteriormente abrir en su entorno de desarrollo el archivo "Database.php"
-    4.2-Debe cambiar la linea de conexion en producción
+2-Aloje la carpeta descomprimida en su servidor local o empresarial <br />
+3-debe alojarlo el paquete en su carpeta donde almacene sus sitios (exemplo: si tiene XAMMP la ruta es /xampp/htdocs) <br />
+4-Antes de iniciar debe configurara en el framework la conexion a la base de datos a su servidor de pruebas<br />
+    4.1- debe abrir la carpeta del proyecto e ir a la carpeta "/app", posteriormente a la carpeta "/config" y posteriormente abrir en su entorno de desarrollo el archivo "Database.php" <br />
+    4.2-Debe cambiar la linea de conexion en producción <br />
 
     ```php
         public $default = [
@@ -37,16 +37,19 @@ limpio usando solo html
         'port'     => 5432,
     ];
     ```
-    4-3 no configure su htacces, ni defina un host para desplegar la solución ya que deberia hacer mas cambios al fichero de configuración <br />
+   4-3 no configure su htacces, ni defina un host para desplegar la solución ya que deberia hacer mas cambios al fichero de configuración <br />
 5-abra su navegador de preferencia y en la cinta de opciones coloque lo siguiente: http://localhost/prueba1_acifuentess <br />
 
 ## Uso
-La solución integra sus p
+
+La solución solo tiene como objetivo ser proceso de prueba integra sus propia vista sin embargo tiene separado el fornt <br />
+
+La Herramienta consume información con API´s que se conectan a la base de datos subida en el motor Postgressql
+
+
 ## Contribuciones
 
 Por favor abstengace de chacer contribuciones a la solución ya que es solo una prueba de ingreso laboral  y no es de uso comercial.
-
-Please make sure to update tests as appropriate.
 
 ## Licencia temporal
 
