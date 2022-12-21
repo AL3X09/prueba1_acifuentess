@@ -14,7 +14,7 @@ function ejercicio5(){
                 var d = $.Deferred();
  
                 $.ajax({
-                    url: base_url+"/api/hotel/listar",
+                    url: base_url+"/api/hotelhabita/listar",
                     dataType: "json",
                 }).done(function(response) {
                     d.resolve(response.data);
@@ -24,13 +24,11 @@ function ejercicio5(){
             }
         },
         fields: [
-          {name: "id_h", title: 'ID', type: "text"},
-          {name: "nombre_h", title: 'Nombre', type: "text", },
-          {name: "ciudad", title: 'Ciudad', type: "text", },
-          {name: "direccion", title: 'Dirección', type: "text", },
-          {name: "nit", title: 'NIT', type: "text", },
-          {name: "t_habitaciones", title: 'Numero de Hab', type: "integer", },
-          
+          {name: "id_hh", title: 'ID', type: "text"},
+          {name: "nombre_h", title: 'Hotel', type: "text", },
+          {name: "tipo", title: 'Tipo Habitación', type: "text", },
+          {name: "nombre", title: 'Acomodación', type: "text", },
+          {name: "cantidad", title: 'Cantidad', type: "text", },
           {
             type: "control",
             modeSwitchButton: false,
@@ -50,18 +48,16 @@ function dialogAdd(){
     title: '<strong>Ingresar Nuevo Registro</strong>',
     icon: 'info',
     html:
-      '<form id="nuevo_r">'+
-      '<label for="fname">Nombre:</label><br>'+
-      '<input type="text" id="nombre_h" name="nombre_h" class="form-control">'+
-	  '<label for="fname">Ciudad:</label><br>'+
-      '<input type="text" id="ciudad" name="ciudad" class="form-control">'+
-	  '<label for="fname">Dirección:</label><br>'+
-      '<input type="text" id="direccion" name="direccion" class="form-control">'+
-	  '<label for="fname">NIT:</label><br>'+
-      '<input type="text" id="nit" name="nit" class="form-control">'+
-	  '<label for="fname">Numero de Habitaciones:</label><br>'+
-    '<input type="text" id="t_habitaciones" name="t_habitaciones" class="form-control">'+
-      '</form> ',
+    '<form id="nuevo_r">'+
+    '<label for="fname">Hotel:</label><br>'+
+    '<select id="fk_hotel" name="fk_hotel" class="form-control">'+
+    '</select>'+
+    '<label for="fname">Tipo Habitacion:</label><br>'+
+    '<select id="fk_habitacion_acomo" name="fk_habitacion_acomo" class="form-control">'+
+    '</select>'+
+    '<label for="fname">Cantidad:</label><br>'+
+    '<input type="text" id="cantidad" name="cantidad" class="form-control">'+
+    '</form> ',
     showCloseButton: true,
     showCancelButton: true,
     focusConfirm: false,
@@ -76,7 +72,7 @@ function dialogAdd(){
     if (result.isConfirmed) {
       //ajax insert
       $.ajax({
-        url: base_url + '/api/hotel/insertar',
+        url: base_url + '/api/hotelhabita/insertar',
         method: 'POST',
         data: $("#nuevo_r").serialize(),
         beforeSend: function () {
@@ -107,26 +103,64 @@ function dialogAdd(){
     }
   })
 
+  listarhotel();
 }
 
-/*{name: "datos_h", title: 'Datos Hsbitación', type: "textarea", width: 50, align: "center",
+function listarhotel(){
+//limpio select
+$('#fk_hotel')
+.find('option')
+.remove()
+.end()
+.append('<option value="">Seleccione</option>')
+.val('');
+//cargo select
+  $.ajax({
+    url: base_url + '/api/hotel/listar',
+    method: 'GET',
+    success: function (data) {
 
-            itemTemplate: function(value, item) {
-                //console.log(value);
-                //console.log(item);
-                var $nestedGrid = $("<div>");          
-                $nestedGrid.jsGrid({
-                    width: 200,
-                height: "auto",
-                data: item.datos,
-                heading: false,
-                fields: [
-                    { name: "tipo_habi", title: 'Fecha', type: "text", width: 200 },
-                    { name: "acomodacion", title: 'Tipo de cambio', type: "number", width: 200 },
-                    { name: "cantidad", title: 'Tipo de cambio', type: "number", width: 200 },
-                ]
-                });
-                return $("<td>").append($nestedGrid);
-                }
-          },
-*/
+      if (data.status == '200') {
+        $.each(data.data, function (k, v) {
+          $("#fk_hotel").append('<option value=' + v.id_h + '>' +v.nombre_h+ '</option>');
+        });
+
+      } else {
+        Swal.fire(data.messages);
+      }
+    },
+    error: function (data) {
+      Swal.fire('Error al conectar con el controlador');
+    }
+  })
+  listaracomo();
+}
+
+function listaracomo(){
+  //limpio select
+  $('#fk_habitacion_acomo')
+  .find('option')
+  .remove()
+  .end()
+  .append('<option value="">Seleccione</option>')
+  .val('');
+  //cargo select
+    $.ajax({
+      url: base_url + '/api/habitacomoda/listar',
+      method: 'GET',
+      success: function (data) {
+  
+        if (data.status == '200') {
+          $.each(data.data, function (k, v) {
+            $("#fk_habitacion_acomo").append('<option value=' + v.id_hc + '>' +v.tipo+'-'+v.nombre+ '</option>');
+          });
+  
+        } else {
+          Swal.fire(data.messages);
+        }
+      },
+      error: function (data) {
+        Swal.fire('Error al conectar con el controlador');
+      }
+    })
+}

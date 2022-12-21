@@ -24,7 +24,7 @@ class HotelHabitacion extends ResourceController{
         try {
             
             $thotelhabitacion = new HotelHabitacionModel();
-            if (!empty($_POST['fk_hotel']) && !empty($_POST['fk_tipohabitacion']) && !empty($_POST['cantidad']) ) {
+            //if (!empty($_POST['fk_hotel']) && !empty($_POST['fk_tipohabitacion']) && !empty($_POST['cantidad']) ) {
             //vedrifico si llega información
             $exis_data = $thotelhabitacion->get_all();
                 if (!empty($exis_data)) {
@@ -43,7 +43,6 @@ class HotelHabitacion extends ResourceController{
                         'messages' => 'Error, tabla sin datos',
                     ];
                 }
-
             return $this->respond($response);
         } catch (\Exception $e) {
             //throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
@@ -54,59 +53,70 @@ class HotelHabitacion extends ResourceController{
     public function insertData(){
         
         try {
-            $thotelhabitaModel = new HotelModel();
+            $thotelhabitacion = new HotelHabitacionModel();
              //vedrifico si llega información obligatoria
-             if (!empty($_POST['fk_hotel']) && !empty($_POST['fk_tipohabitacion']) && !empty($_POST['cantidad']) ) {
-                //consulto la cantidad total que puede tener el hotel
+             if (!empty($_POST['fk_hotel']) && !empty($_POST['fk_habitacion_acomo']) && !empty($_POST['cantidad']) ) {
+                $data = [
+                    "FK_hotel" => $this->request->getVar("fk_hotel"),
+                    "FK_habitacion_acomo" => $this->request->getVar("fk_habitacion_acomo"),
+                    "cantidad" => $this->request->getVar("cantidad"),
+                ];
+                
+                //consulto la cantidad total de habitaciones que tiene el hotel
                 $thotelModel = new HotelModel();
-                $total_h = $thotelModel->get_thabitaciones();
-                //obtengo la cantidad de habitaciones asociadas
-                $count_data = $thotelhabitacion->count_all();
-                if (!empty($count_data) &&  $count_data < $thotelModel ) {
-                    $total=($count_data+$_POST['cantidad']);
-                    //valido que no supero el numero de habitaciones
-                    if($total > $thotelModel){
+                $total_h = $thotelModel->get_thabitacion($data['FK_hotel']);
+                //consulto la cantidad de habitaciones por acomodación
+                $cantidad_h = $thotelhabitacion->get_t_habitaciones($data['FK_hotel']);
+                //print_r($total_h[0]['t_habitaciones']);
+                //echo "entra aca";
+                //print_r($cantidad_h[0]['cantidad']);
+                if (!empty($total_h[0]['t_habitaciones']) ) {
+                    if (!empty($cantidad_h[0]['cantidad']) ) {
+                        $t_habitaciones = intval($cantidad_h[0]['cantidad']) + intval($_POST['cantidad']);
+                    }else{
+                        $t_habitaciones = intval($_POST['cantidad']);
+                    }
+                    
+                    if($t_habitaciones > $total_h[0]['t_habitaciones']){
                         $response = [
                             'status' => 401,
                             "error" => TRUE,
                             'messages' => 'Excede el valor de las habitaciones para el hotel',
                         ];
+                    }else if($t_habitaciones <= $total_h[0]['t_habitaciones']){
+                        //inserto datos
+                        //valido si ya esta registrado el correo y envio exeption
+                        $exis_d = $thotelhabitacion->exist_hh($data);
+
+                        if ($exis_d) {
+                            $response = [
+                                'status' => 401,
+                                "error" => TRUE,
+                                'messages' => 'El valor ya existe',
+                            ];
+                        } else {
+                            //Envio datos al modelo para insertar
+                            $insert_t = $thotelhabitacion->insert_hh($data);
+
+                            if ($insert_t) {
+                                $response = [
+                                    'status' => 201,
+                                    "error" => FALSE,
+                                    'messages' => 'Asociación creada',
+                                ];
+                            } else {
+
+                                $response = [
+                                    'status' => 500,
+                                    "error" => TRUE,
+                                    'messages' => 'Fallo al crear',
+                                ];
+                            }
+                        }
                     }
+                    
                 }
-
-                $data = [
-                    "fk_hotel" => $this->request->getVar("nombre"),
-                    "fk_tipohabitacion" => $this->request->getVar("ciudad"),
-                    "cantidad" => $this->request->getVar("numero_hab"),
-                ];
-               //valido si ya esta registrado el correo y envio exeption
-               $exis_d = $thabitacionModel->exist_t($data);
-
-               if ($exis_d) {
-                   $response = [
-                       'status' => 401,
-                       "error" => TRUE,
-                       'messages' => 'El valor ya existe',
-                   ];
-               } else {
-                   //Envio datos al modelo para insertar
-                   $insert_t = $thabitacionModel->insert_t($data);
-
-                   if ($insert_t) {
-                       $response = [
-                           'status' => 201,
-                           "error" => FALSE,
-                           'messages' => 'Tipo creado',
-                       ];
-                   } else {
-
-                       $response = [
-                           'status' => 500,
-                           "error" => TRUE,
-                           'messages' => 'Fallo al crear',
-                       ];
-                   }
-               }
+               
            } else {
 
                $response = [
@@ -121,7 +131,7 @@ class HotelHabitacion extends ResourceController{
                "error" => TRUE,
                'messages' => 'se ha presntado una exepción ' . $e->getMessage(),
            ];
-           //die($e->getMessage());
+           
        }
        return $this->respond($response);
 

@@ -12,14 +12,14 @@ class AcomodacionModel extends Model{
 
     protected $DBGroup              = 'default';
 	protected $table                = 'acomodacion';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'id_acom';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
 	protected $allowedFields        = [
-		"id",
+		"id_acom",
 		"nombre"
 	];
 

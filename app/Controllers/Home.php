@@ -33,4 +33,15 @@ class Home extends BaseController{
 		echo view('template/footer');
     }
 
+    public function habitaacomoda_view(){
+        echo view('template/header');
+		echo view('habitacionacomodacion/index');
+		echo view('template/footer');
+    }
+    public function hotelhabita_view(){
+        echo view('template/header');
+		echo view('hotelhabitacion/index');
+		echo view('template/footer');
+    }
+    
 }

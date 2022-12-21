@@ -35,6 +35,8 @@ $routes->get("/", "Home::index");
 $routes->get("/Hoteles", "Home::hoteles_view");
 $routes->get("/Tipohabitacion", "Home::tipohabitacion_view");
 $routes->get("/Acomodacion", "Home::acomodacion_view");
+$routes->get("/HabitaAcomoda", "Home::habitaacomoda_view");
+$routes->get("/HotelHabita", "Home::hotelhabita_view");
 
 /*
  * --------------------------------------------------------------------
@@ -52,8 +54,8 @@ $routes->get("/Acomodacion", "Home::acomodacion_view");
 
  //grupo para procesos de las HSO
 $routes->group("api/hotel", function ($routes) {
-    $routes->get("listar", "getallData::Listar");
-    
+    $routes->get("listar", "Hotel::getallData");
+    $routes->post("insertar", "Hotel::insertData");
 });
 
  //grupo para procesos de las XXX
@@ -64,9 +66,21 @@ $routes->group("api/tipohabitacion", function ($routes) {
 
  //grupo para procesos de las XXX
  $routes->group("api/acomodacion", function ($routes) {
-    $routes->get("listar", "acomodacion::getallData");
+    $routes->get("listar", "Acomodacion::getallData");
+	$routes->post("insertar", "Acomodacion::insertData");
 });
 
+//grupo para procesos de las XXX
+$routes->group("api/habitacomoda", function ($routes) {
+    $routes->get("listar", "HabitacionAcomoda::getallData");
+	$routes->post("insertar", "HabitacionAcomoda::insertData");
+});
+
+//grupo para procesos de las XXX
+$routes->group("api/hotelhabita", function ($routes) {
+    $routes->get("listar", "HotelHabitacion::getallData");
+	$routes->post("insertar", "HotelHabitacion::insertData");
+});
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

@@ -12,14 +12,13 @@ class TipohabitacionModel extends Model{
 
     protected $DBGroup              = 'default';
 	protected $table                = 'tipo_habitacion';
-	protected $primaryKey           = 'id';
+	protected $primaryKey           = 'id_habi';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
 	protected $returnType           = 'array';
 	protected $useSoftDelete        = false;
 	protected $protectFields        = true;
 	protected $allowedFields        = [
-		"id",
 		"tipo"
 	];
 

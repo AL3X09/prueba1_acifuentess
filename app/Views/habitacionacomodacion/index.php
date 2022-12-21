@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="text-center">
-					<h1 class="text-blue pb-2 fw-bold">Listado Hoteles</h1>
+					<h1 class="text-blue pb-2 fw-bold">Listado Asociación</h1>
 					<br/>
 					<a href="<?= base_url(); ?>" class="btn btn-primary mt-2">Volver</a>
 				</div>
@@ -26,4 +26,4 @@
 
 	<!-- JS pagina 	-->
 	<script src="<?= base_url(); ?>/public/assets/js/plugin/jsgrid/jsgrid.js"></script>
-	<script src="<?= base_url(); ?>/public/assets/js/paginas/hotel.js"></script>
+	<script src="<?= base_url(); ?>/public/assets/js/paginas/habitaacomoda.js"></script>

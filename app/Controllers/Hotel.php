@@ -26,6 +26,7 @@ class Hotel extends ResourceController{
             //printf("entra 2: ".$exis_gus);
             //vedrifico si llega información
             $exis_hotel = $thotelModel->get_all();
+            
                 if (!empty($exis_hotel)) {
 
                     $response = [
@@ -55,17 +56,18 @@ class Hotel extends ResourceController{
         try {
             $thotelModel = new HotelModel();
              //vedrifico si llega información obligatoria
-             if (!empty($_POST['nombre']) ) {
+             if (!empty($_POST['nombre_h']) ) {
 
                 $data = [
-                    "nombre" => $this->request->getVar("nombre"),
+                    "nombre_h" => $this->request->getVar("nombre_h"),
                     "ciudad" => $this->request->getVar("ciudad"),
-                    "numero_hab" => $this->request->getVar("numero_hab"),
                     "direccion" => $this->request->getVar("direccion"),
-                    "nit" => $this->request->getVar("nit")
+                    "nit" => $this->request->getVar("nit"),
+					"t_habitaciones" => intval($this->request->getVar("t_habitaciones")),
                 ];
-               //valido si ya esta registrado el correo y envio exeption
-               $exis_d = $thabitacionModel->exist_t($data);
+				//print_r($data);
+               //valido si ya esta registrado el nombre
+               $exis_d = $thotelModel->exist_h($data['nombre_h']);
 
                if ($exis_d) {
                    $response = [
@@ -74,23 +76,22 @@ class Hotel extends ResourceController{
                        'messages' => 'El valor ya existe',
                    ];
                } else {
-                   //Envio datos al modelo para insertar
-                   $insert_t = $thabitacionModel->insert_t($data);
+                //Envio datos al modelo para insertar
+                $insert_h = $thotelModel->insert_h($data);
 
-                   if ($insert_t) {
-                       $response = [
-                           'status' => 201,
-                           "error" => FALSE,
-                           'messages' => 'Tipo creado',
-                       ];
-                   } else {
-
-                       $response = [
-                           'status' => 500,
-                           "error" => TRUE,
-                           'messages' => 'Fallo al crear',
-                       ];
-                   }
+                    if ($insert_h) {
+                        $response = [
+							'status' => 201,
+							"error" => FALSE,
+							'messages' => 'Hotel creado',
+							];
+                    } else {
+                        $response = [
+                                'status' => 500,
+                                "error" => TRUE,
+                                'messages' => 'Fallo al crear',
+                            ];
+                    }
                }
            } else {
 

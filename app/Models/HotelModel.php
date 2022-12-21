@@ -24,7 +24,7 @@ class HotelModel extends Model{
 		"ciudad", 
 		"direccion", 
 		"nit",
-		"num_habitaciones"
+		"t_habitaciones"
 	];
 
     // Dates
@@ -51,14 +51,31 @@ class HotelModel extends Model{
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
 
-	
+	/*public function get_all()
+	{
+		$querye = $this->table($this->table)
+			->join('hotel_habitacion AS HH', 'HH.FK_hotel = id_h')
+			->join('habitacion_acomodacion AS AH', 'HH.FK_habitacion_acomo = AH.id_hc')
+			->join('tipo_habitacion AS TH', 'AH.FK_tipo_habitacion = TH.id_habi')
+			->join('acomodacion AS A', 'AH.FK_acomodacion = A.id_acom')
+			->get()
+			->getResult();
+		return $querye;
+	}*/
 
-	public function exist_name($name)
+	public function get_all()
+	{
+		$querye = $this->table($this->table)
+			->get()
+			->getResult();
+		return $querye;
+	}
+
+	public function exist_h($nombre)
     {
         $querye = $this->table($this->table)
-					->where('nombre', $name)
+					->where('nombre_h', $nombre)
 					->countAllResults();
-		
         if($querye >  0){
             $querye = true;
         } else {
@@ -67,13 +84,28 @@ class HotelModel extends Model{
         return $querye;
     }
 
-	public function get_thabitaciones($fk_hotel)
+	public function get_thabitacion($fk_hotel)
     {
         $querye = $this->table($this->table)
 				  ->distinct()
-				  ->select('num_habitaciones')
-				  ->where('id', $fk_hotel);
+				  ->select('t_habitaciones')
+				  ->where('id_h', $fk_hotel)
+				  ->get()
+				  ->getResultArray();
+				  //->getResult();
+				  //->getCompiledSelect();
+					//print_r($querye);
+				  
+				  //->getUnbufferedRow();
         return $querye;
     }
+	
+	public function insert_h($data)
+	{
+		$query = $this->db->table($this->table)->insert($data);
+		return $query ? true : false;
+		//$insert_id = $this->db->insert_id();
+		//return  $insert_id;
+	}
 
 }

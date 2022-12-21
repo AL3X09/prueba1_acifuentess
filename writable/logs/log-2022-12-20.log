@@ -1,0 +1,538 @@
+ERROR - 2022-12-20 16:14:29 --> ErrorException: pg_query(): Query failed: ERROR:  column HH.fk_hotel does not exist
+LINE 3: JOIN &quot;hotel_habitacion&quot; AS &quot;HH&quot; ON &quot;HH&quot;.&quot;fk_hotel&quot; = &quot;id_h&quot;
+                                           ^
+HINT:  Perhaps you meant to reference the column &quot;HH.FK_hotel&quot;. in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #12, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelModel.php(61): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\Hotel.php(28): App\Models\HotelModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\Hotel->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hotel))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-20 16:14:29 --> Call to a member function getResult() on bool
+#0 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\Hotel.php(28): App\Models\HotelModel->get_all()
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\Hotel->getallData()
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hotel))
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-12-20 16:48:58 --> syntax error, unexpected '"numero_hab"' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+#0 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-20 16:50:16 --> syntax error, unexpected '"numero_hab"' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+#0 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-20 16:51:51 --> syntax error, unexpected '"numero_hab"' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+#0 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-20 16:52:03 --> syntax error, unexpected '"numero_hab"' (T_CONSTANT_ENCAPSED_STRING), expecting ']'
+#0 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-20 16:53:52 --> Cannot use App\Models\HotelModel as HotelModel because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+ERROR - 2022-12-20 17:38:01 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;nombre&quot; does not exist
+LINE 3: WHERE &quot;nombre&quot; = 'Decameron Cartagena'
+              ^
+HINT:  Perhaps you meant to reference the column &quot;hotel.nombre_h&quot;. in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #10, 'SELECT COUNT(*)...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT COUNT(*)...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(509): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelModel.php(70): CodeIgniter\Model->countAllResults()
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\Hotel.php(71): App\Models\HotelModel->exist_h('Decameron Carta...')
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\Hotel->insertData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hotel))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 17:45:22 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;nombre&quot; does not exist
+LINE 3: WHERE &quot;nombre&quot; = 'dsd'
+              ^
+HINT:  Perhaps you meant to reference the column &quot;hotel.nombre_h&quot;. in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #11, 'SELECT COUNT(*)...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT COUNT(*)...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(509): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelModel.php(78): CodeIgniter\Model->countAllResults()
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\Hotel.php(70): App\Models\HotelModel->exist_h('dsd')
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\Hotel->insertData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hotel))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 17:47:38 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;nombre&quot; does not exist
+LINE 3: WHERE &quot;nombre&quot; = 'dfd'
+              ^
+HINT:  Perhaps you meant to reference the column &quot;hotel.nombre_h&quot;. in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'SELECT COUNT(*)...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT COUNT(*)...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(509): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelModel.php(78): CodeIgniter\Model->countAllResults()
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\Hotel.php(70): App\Models\HotelModel->exist_h('dfd')
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\Hotel->insertData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hotel))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 17:54:34 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;nombre&quot; does not exist
+LINE 3: WHERE &quot;nombre&quot; = 'decameron cartagena'
+              ^
+HINT:  Perhaps you meant to reference the column &quot;hotel.nombre_h&quot;. in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #11, 'SELECT COUNT(*)...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT COUNT(*)...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(509): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelModel.php(77): CodeIgniter\Model->countAllResults()
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\Hotel.php(70): App\Models\HotelModel->exist_h('decameron carta...')
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\Hotel->insertData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hotel))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 17:54:34 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;nombre&quot; of relation &quot;hotel&quot; does not exist
+LINE 1: INSERT INTO &quot;hotel&quot; (&quot;nombre&quot;, &quot;ciudad&quot;, &quot;direccion&quot;, &quot;nit&quot;,...
+                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #11, 'INSERT INTO "ho...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ho...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ho...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ho...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelModel.php(97): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\Hotel.php(80): App\Models\HotelModel->insert_h(Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\Hotel->insertData()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hotel))
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-12-20 17:56:39 --> ErrorException: pg_query(): Query failed: ERROR:  null value in column &quot;nombre_h&quot; of relation &quot;hotel&quot; violates not-null constraint
+DETAIL:  Failing row contains (1, null, ljhjh, fgh#, 12345678-9, 42). in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #11, 'INSERT INTO "ho...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ho...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ho...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ho...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelModel.php(98): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\Hotel.php(80): App\Models\HotelModel->insert_h(Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\Hotel->insertData()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Hotel))
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-12-20 18:44:46 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #11, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(58): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-20 18:44:46 --> Call to a member function getResult() on bool
+#0 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-12-20 18:44:54 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(58): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-20 18:44:54 --> Call to a member function getResult() on bool
+#0 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-12-20 18:48:54 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #10, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 18:58:11 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 19:09:40 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 19:11:36 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 19:13:20 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 19:18:00 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #10, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 19:18:10 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;nombre&quot; does not exist
+LINE 3: WHERE &quot;nombre&quot; IS NULL
+              ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'SELECT COUNT(*)...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT COUNT(*)...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(509): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(76): CodeIgniter\Model->countAllResults()
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(66): App\Models\HabitacionAcomodaModel->exist_hc(Array)
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->insertData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 19:18:10 --> ErrorException: pg_query(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;habitacion_acomodacion_pkey&quot;
+DETAIL:  Key (id_hc)=(1) already exists. in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'INSERT INTO "ha...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ha...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ha...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ha...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(88): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(76): App\Models\HabitacionAcomodaModel->insert_hc(Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->insertData()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-12-20 19:23:25 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #11, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 19:24:46 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #10, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+ERROR - 2022-12-20 19:31:20 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #10, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-20 19:31:20 --> Call to a member function getCompiledSelect() on bool
+#0 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-12-20 19:31:31 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #9, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-20 19:31:31 --> Call to a member function getCompiledSelect() on bool
+#0 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-12-20 19:32:45 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #10, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-20 19:32:45 --> Call to a member function getResult() on bool
+#0 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-12-20 19:34:43 --> ErrorException: pg_query(): Query failed: ERROR:  missing FROM-clause entry for table &quot;AH&quot;
+LINE 3: ...ipo_habitacion&quot; AS &quot;TH&quot; ON &quot;FK_tipo_habitacion&quot; = &quot;AH&quot;.&quot;id_h...
+                                                             ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #10, 'SELECT *\nFROM "...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\Model.php(728): CodeIgniter\Database\BaseBuilder->get()
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HabitacionAcomodaModel.php(59): CodeIgniter\Model->__call('get', Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#10 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-12-20 19:34:43 --> Call to a member function getResult() on bool
+#0 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HabitacionAcomoda.php(26): App\Models\HabitacionAcomodaModel->get_all()
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HabitacionAcomoda->getallData()
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HabitacionAcomoda))
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-12-20 20:44:17 --> syntax error, unexpected '->' (T_OBJECT_OPERATOR)
+#0 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\xampp\\htdocs...')
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Hote...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Hote...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HotelHabitacion.php(56): spl_autoload_call('App\\Models\\Hote...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HotelHabitacion->insertData()
+#5 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HotelHabitacion))
+#6 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-12-20 20:50:37 --> Object of class CodeIgniter\Database\Postgre\Result could not be converted to string
+#0 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HotelHabitacion.php(70): printf(Object(CodeIgniter\Database\Postgre\Result))
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HotelHabitacion->insertData()
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HotelHabitacion))
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-12-20 21:09:57 --> Cannot use object of type stdClass as array
+#0 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HotelHabitacion->insertData()
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HotelHabitacion))
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2022-12-20 21:43:24 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;FK_tipohabitacion&quot; of relation &quot;hotel_habitacion&quot; does not exist
+LINE 1: INSERT INTO &quot;hotel_habitacion&quot; (&quot;FK_hotel&quot;, &quot;FK_tipohabitaci...
+                                                    ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #11, 'INSERT INTO "ho...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ho...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ho...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ho...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelHabitacionModel.php(98): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HotelHabitacion.php(99): App\Models\HotelHabitacionModel->insert_hh(Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HotelHabitacion->insertData()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HotelHabitacion))
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-12-20 21:47:44 --> ErrorException: pg_query(): Query failed: ERROR:  column &quot;FK_tipohabitacion&quot; of relation &quot;hotel_habitacion&quot; does not exist
+LINE 1: INSERT INTO &quot;hotel_habitacion&quot; (&quot;FK_hotel&quot;, &quot;FK_tipohabitaci...
+                                                    ^ in D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'D:\\xampp\\htdocs...', 135, Array)
+#1 D:\xampp\htdocs\prueba1_acifuentess\system\Database\Postgre\Connection.php(135): pg_query(Resource id #10, 'INSERT INTO "ho...')
+#2 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "ho...')
+#3 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "ho...')
+#4 D:\xampp\htdocs\prueba1_acifuentess\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO "ho...', Array, false)
+#5 D:\xampp\htdocs\prueba1_acifuentess\app\Models\HotelHabitacionModel.php(98): CodeIgniter\Database\BaseBuilder->insert(Array)
+#6 D:\xampp\htdocs\prueba1_acifuentess\app\Controllers\HotelHabitacion.php(99): App\Models\HotelHabitacionModel->insert_hh(Array)
+#7 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(832): App\Controllers\HotelHabitacion->insertData()
+#8 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HotelHabitacion))
+#9 D:\xampp\htdocs\prueba1_acifuentess\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\xampp\htdocs\prueba1_acifuentess\index.php(39): CodeIgniter\CodeIgniter->run()
+#11 {main}

@@ -50,7 +50,6 @@
 				
 			</div>
 			<div class="row mt-2">
-				
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;">
 						<img src="<?=base_url();?>/public/assets/img/habitacomo.png" class="card-img-top" alt="...">
@@ -59,7 +58,19 @@
 							<p class="card-text">
 								Listar e ingresar Asociación
 							</p>
-							<a href="Acomodacion" class="btn btn-primary">Ingresar</a>
+							<a href="HabitaAcomoda" class="btn btn-primary">Ingresar</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card" style="width: 18rem;">
+						<img src="<?=base_url();?>/public/assets/img/hotelhabita.png" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">Asociar Hotel y Habitacion </h5>
+							<p class="card-text">
+								Listar e ingresar Asociación
+							</p>
+							<a href="HotelHabita" class="btn btn-primary">Ingresar</a>
 						</div>
 					</div>
 				</div>

@@ -6,7 +6,7 @@ use Config\Services;
 use CodeIgniter\API\ResponseTrait;
 use CodeIgniter\RESTful\ResourceController;
 use Exception;
-use App\Models\AcomodacionModel;
+use App\Models\HabitacionAcomodaModel;
 
 // headers
 header("Access-Control-Allow-Origin: *");
@@ -14,7 +14,7 @@ header("Content-Type: application/json; charset=utf8");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control");
 
 //grupo de la unidad de servicios de salud
-class Acomodacion extends ResourceController{
+class HabitacionAcomoda extends ResourceController{
     
     use ResponseTrait;
 
@@ -22,16 +22,14 @@ class Acomodacion extends ResourceController{
         
         try {
             
-            $acomodacionModel = new AcomodacionModel();
-            //printf("entra 2: ".$exis_gus);
-            //vedrifico si llega información
-            $exis_acomodacion = $acomodacionModel->get_all();
-                if (!empty($exis_acomodacion)) {
+            $thabutaacomo = new HabitacionAcomodaModel();
+            $exis_data = $thabutaacomo->get_all();
+                if (!empty($exis_data)) {
 
                     $response = [
                         'status' => 200,
                         "error" => FALSE,
-                        'data' => $exis_acomodacion,
+                        'data' => $exis_data,
                     ];
 
                 } else {
@@ -53,15 +51,19 @@ class Acomodacion extends ResourceController{
     public function insertData(){
         
         try {
-            $acomodacionModel = new AcomodacionModel();
+            $thabutaacomo = new HabitacionAcomodaModel();
              //vedrifico si llega información obligatoria
-             if (!empty($_POST['nombre']) ) {
+             //var_dump($_POST);
+
+             if (!empty($_POST['fk_tipo_habitacion']) && !empty($_POST['fk_acomodacion'])) {
 
                 $data = [
-                    "nombre" => $this->request->getVar("nombre"),
+                    "FK_tipo_habitacion" => $this->request->getVar("fk_tipo_habitacion"),
+                    "FK_acomodacion" => $this->request->getVar("fk_acomodacion"),
                 ];
-               //valido si ya esta registrado el correo y envio exeption
-               $exis_d = $acomodacionModel->exist_a($data);
+				//print_r($data);
+               //valido si ya esta registrado el nombre
+               $exis_d = $thabutaacomo->exist_hc($data);
 
                if ($exis_d) {
                    $response = [
@@ -70,23 +72,22 @@ class Acomodacion extends ResourceController{
                        'messages' => 'El valor ya existe',
                    ];
                } else {
-                   //Envio datos al modelo para insertar
-                   $insert_t = $acomodacionModel->insert_a($data);
+                //Envio datos al modelo para insertar
+                $insert_hc = $thabutaacomo->insert_hc($data);
 
-                   if ($insert_t) {
-                       $response = [
-                           'status' => 201,
-                           "error" => FALSE,
-                           'messages' => 'Acomodación creada',
-                       ];
-                   } else {
-
-                       $response = [
-                           'status' => 500,
-                           "error" => TRUE,
-                           'messages' => 'Fallo al crear',
-                       ];
-                   }
+                    if ($insert_hc) {
+                        $response = [
+							'status' => 201,
+							"error" => FALSE,
+							'messages' => 'Asociación creada',
+							];
+                    } else {
+                        $response = [
+                                'status' => 500,
+                                "error" => TRUE,
+                                'messages' => 'Fallo al crear',
+                            ];
+                    }
                }
            } else {
 
@@ -105,7 +106,6 @@ class Acomodacion extends ResourceController{
            //die($e->getMessage());
        }
        return $this->respond($response);
-
     }
 
 }

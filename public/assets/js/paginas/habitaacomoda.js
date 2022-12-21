@@ -14,7 +14,7 @@ function ejercicio5(){
                 var d = $.Deferred();
  
                 $.ajax({
-                    url: base_url+"/api/acomodacion/listar",
+                    url: base_url+"/api/habitacomoda/listar",
                     dataType: "json",
                 }).done(function(response) {
                     d.resolve(response.data);
@@ -24,7 +24,7 @@ function ejercicio5(){
             }
         },
         fields: [
-          {name: "id_acom", title: 'ID', type: "text"},
+          {name: "tipo", title: 'Tipo Habitación', type: "text"},
           {name: "nombre", title: 'Acomodación', type: "text"}, 
 		  {
             type: "control",
@@ -47,8 +47,12 @@ function dialogAdd(){
     icon: 'info',
     html:
       '<form id="nuevo_r">'+
+      '<label for="fname">Tipo Habitación:</label><br>'+
+      '<select id="fk_tipo_habitacion" name="fk_tipo_habitacion" class="form-control">'+
+      '</select>'+
       '<label for="fname">Acomodación:</label><br>'+
-      '<input type="text" id="nombre" name="nombre" class="form-control">'+
+      '<select id="fk_acomodacion" name="fk_acomodacion" class="form-control">'+
+      '</select>'+
       '</form> ',
     showCloseButton: true,
     showCancelButton: true,
@@ -64,7 +68,7 @@ function dialogAdd(){
     if (result.isConfirmed) {
       //ajax insert
       $.ajax({
-        url: base_url + '/api/acomodacion/insertar',
+        url: base_url + '/api/habitacomoda/insertar',
         method: 'POST',
         data: $("#nuevo_r").serialize(),
         beforeSend: function () {
@@ -94,5 +98,75 @@ function dialogAdd(){
       Swal.fire('Operación cancelada', '', 'info')
     }
   })
-
+  listartipo()
 }
+
+function listartipo(){
+//limpio select
+$('#fk_tipo_habitacion')
+.find('option')
+.remove()
+.end()
+.append('<option value="">Seleccione</option>')
+.val('');
+//cargo select
+  $.ajax({
+    url: base_url + '/api/tipohabitacion/listar',
+    method: 'GET',
+    success: function (data) {
+
+      if (data.status == '200') {
+        $.each(data.data, function (k, v) {
+          $("#fk_tipo_habitacion").append('<option value=' + v.id_habi + '>' +v.tipo+ '</option>');
+          
+          /*if ($("#fk_tipo_habitacion").length) {
+            $("#fk_tipo_habitacion").append('<option value=' + v.id_tbl_serv_ofertado + '>' +v.nombre_serv + '</option>');
+            $("#fk_tipo_habitacion").val($idsvo);
+          }*/
+        });
+
+      } else {
+        Swal.fire(data.messages);
+      }
+    },
+    error: function (data) {
+      Swal.fire('Error al conectar con el controlador');
+    }
+  })
+  listaracomo();
+}
+
+function listaracomo(){
+  //limpio select
+  $('#fk_acomodacion')
+  .find('option')
+  .remove()
+  .end()
+  .append('<option value="">Seleccione</option>')
+  .val('');
+  //cargo select
+    $.ajax({
+      url: base_url + '/api/acomodacion/listar',
+      method: 'GET',
+      success: function (data) {
+  
+        if (data.status == '200') {
+          $.each(data.data, function (k, v) {
+            $("#fk_acomodacion").append('<option value=' + v.id_acom + '>' +v.nombre+ '</option>');
+            
+            /*if ($("#fk_tipo_habitacion").length) {
+              $("#fk_tipo_habitacion").append('<option value=' + v.id_tbl_serv_ofertado + '>' +v.nombre_serv + '</option>');
+              $("#fk_tipo_habitacion").val($idsvo);
+            }*/
+          });
+  
+        } else {
+          Swal.fire(data.messages);
+        }
+      },
+      error: function (data) {
+        Swal.fire('Error al conectar con el controlador');
+      }
+    })
+  
+  }
